@@ -19,7 +19,7 @@ exports.GravarCliente = async (req, res) => {
     const result = await cliente.InsertClient({
         ...data
     })
-    if (result.ResultSetHeader.affectedRows > 0 ){
+    if (result[0].affectedRows > 0 ){
         res.status(200).json({
             msg: 'Criado com sucesso!!',        
         })
@@ -34,7 +34,7 @@ exports.GravarCliente = async (req, res) => {
 
 exports.SelectCliente = async (req, res) => {
     const result = await cliente.SelectClient({})
-    if (result.affectedRows >= 0){
+    if (result.length >= 0){
         res.status(200).json({
             data: result,
             msg: 'Success'
@@ -72,4 +72,25 @@ exports.UpdateCliente = async (req, res) => {
         })
     }
 
+}
+exports.DeleteCliente = async (req, res) =>{
+ const {id = 0} = req.body
+ 
+ if(id == 0 || id == ''){
+     res.status(500).json({
+         msg: 'Por favor insirar corretamente o Id'
+     })
+    }
+     let result = await cliente.DeleteClient({id})
+     if (result[0].affectedRows >= 0) {
+         res.status(200).json({
+             msg: 'Deletado com sucesso!!'
+         })
+     } else {
+         res.status(404).json({
+             msg: 'Cliente não encontrado'
+         })
+     }
+
+ 
 }

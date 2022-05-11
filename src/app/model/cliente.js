@@ -17,3 +17,8 @@ exports.UpdateClient = async (values) => {
     const update = [values.nome, values.dt_nascimento, values.email, values.rua, values.numero, values.bairro, values.cidade, values.estado, values.cep];   
     return await conn.query(sql, update);
 }
+exports.DeleteClient = async (id) =>{   
+    const conn =await connect();
+    const sql = 'DELETE FROM tb_cliente where id = ?';
+    return await conn.query(sql, [id]);
+}
