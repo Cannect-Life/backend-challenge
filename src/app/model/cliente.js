@@ -1,11 +1,19 @@
 const connect = require('../../config/db')
-exports.InsertUsuario = async (values) =>{
-    
+exports.InsertClient = async (values) =>{    
     const conn = await connect();
     const sql = 'INSERT INTO tb_cliente(nome,dt_nascimento,email,cpf,rua,numero,bairro,cidade,estado,cep) VALUES (?,?,?,?,?,?,?,?,?,?)'
     const insert = [values.nome, values.dt_nascimento, values.email, values.cpf, values.rua, values.numero, values.bairro, values.cidade, values.estado, values.cep];
-
     return await conn.query(sql, insert);
-
-
+}
+exports.SelectClient = async () => {
+    const conn = await connect();
+    const [line] = await conn.query('SELECT * FROM tb_cliente;');
+    return line;
+}
+exports.UpdateClient = async (values) => {
+    const conn = await connect();
+    values.cpf = '%' + values.cpf + '%';
+    const sql = `UPDATE tb_cliente SET nome = ?,dt_nascimento = ?,email =?,rua =?,numero =?,bairro =?,cidade =?,estado =?,cep =? WHERE cpf LIKE '${values.cpf}'`
+    const update = [values.nome, values.dt_nascimento, values.email, values.rua, values.numero, values.bairro, values.cidade, values.estado, values.cep];   
+    return await conn.query(sql, update);
 }

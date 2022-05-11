@@ -6,7 +6,8 @@ async function connect(){
     //setando a configuração da conexão
     const conn = await mysql.createConnection('mysql://root:@localhost:3306/cannect');
     console.log('conectou!!!');
-    
+
+     
     global.connection = conn;
     return conn
 }

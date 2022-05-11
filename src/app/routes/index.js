@@ -4,6 +4,8 @@ const rotaPadrao = require('../controllers/rotaPadrao');
 const cliente = require('../controllers/cliente')
 
 routes.get('/', rotaPadrao)
-routes.post('/creatClient', cliente.GravarCliente);
+routes.post('/cadastrarCliente', cliente.GravarCliente);
+routes.get('/visualizarCliente', cliente.SelectCliente);
+routes.patch('/atualizarCliente', cliente.UpdateCliente);
 
 module.exports = routes
