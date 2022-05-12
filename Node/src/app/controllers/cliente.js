@@ -47,6 +47,7 @@ exports.SelectCliente = async (req, res) => {
 
 }
 exports.UpdateCliente = async (req, res) => {
+    let id = req.params.id
     // função para descontruir o objeto
     let data = await funcao.validateObject(req.body)
     // usando o test para validar o formulario
@@ -58,9 +59,11 @@ exports.UpdateCliente = async (req, res) => {
         })
         return false;
     }
+    data.id = id
 
     const result = await cliente.UpdateClient({
         ...data
+        
     })    
     if (result[0].affectedRows >= 0) {
         res.status(200).json({         
@@ -74,14 +77,14 @@ exports.UpdateCliente = async (req, res) => {
 
 }
 exports.DeleteCliente = async (req, res) =>{
- const {id = 0} = req.body
+ const id = req.params.id;
  
  if(id == 0 || id == ''){
      res.status(500).json({
          msg: 'Por favor insirar corretamente o Id'
      })
     }
-     let result = await cliente.DeleteClient({id})
+     let result = await cliente.DeleteClient(id)
      if (result[0].affectedRows >= 0) {
          res.status(200).json({
              msg: 'Deletado com sucesso!!'

@@ -10,14 +10,13 @@ exports.SelectClient = async () => {
     const [line] = await conn.query('SELECT * FROM tb_cliente;');
     return line;
 }
-exports.UpdateClient = async (values) => {
-    const conn = await connect();
-    values.cpf = '%' + values.cpf + '%';
-    const sql = `UPDATE tb_cliente SET nome = ?,dt_nascimento = ?,email =?,rua =?,numero =?,bairro =?,cidade =?,estado =?,cep =? WHERE cpf LIKE '${values.cpf}'`
+exports.UpdateClient = async (values) => {    
+    const conn = await connect();   
+    const sql = `UPDATE tb_cliente SET nome = ?,dt_nascimento = ?,email =?,rua =?,numero =?,bairro =?,cidade =?,estado =?,cep =? WHERE id = '${values.id}'`
     const update = [values.nome, values.dt_nascimento, values.email, values.rua, values.numero, values.bairro, values.cidade, values.estado, values.cep];   
     return await conn.query(sql, update);
 }
-exports.DeleteClient = async (id) =>{   
+exports.DeleteClient = async (id) =>{      
     const conn =await connect();
     const sql = 'DELETE FROM tb_cliente where id = ?';
     return await conn.query(sql, [id]);

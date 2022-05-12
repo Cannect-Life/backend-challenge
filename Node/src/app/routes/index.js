@@ -6,7 +6,7 @@ const cliente = require('../controllers/cliente')
 routes.get('/', rotaPadrao)
 routes.post('/cadastrarCliente', cliente.GravarCliente);
 routes.get('/visualizarCliente', cliente.SelectCliente);
-routes.patch('/atualizarCliente', cliente.UpdateCliente);
-routes.delete('/deletarCliente', cliente.DeleteCliente);
+routes.patch('/atualizarCliente/:id', cliente.UpdateCliente);
+routes.delete('/deletarCliente/:id', cliente.DeleteCliente);
 
 module.exports = routes
