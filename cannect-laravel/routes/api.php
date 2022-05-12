@@ -19,5 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::get('/consultarPagamento', 'PagamentoController@selectPag')->name('consultarPagamento');
 Route::post('/criarPagamento', 'PagamentoController@createPag')->name('criarPagamento');
-Route::patch('/atualizarPagamento', 'PagamentoController@updatePag')->name('atualizarPagamento');
-Route::delete('/apagarPagamento', 'PagamentoController@deletePag')->name('apagarPagamento');
+Route::patch('/atualizarPagamento/{id}', 'PagamentoController@updatePag')->name('atualizarPagamento');
+Route::delete('/apagarPagamento/{id}', 'PagamentoController@deletePag')->name('apagarPagamento');

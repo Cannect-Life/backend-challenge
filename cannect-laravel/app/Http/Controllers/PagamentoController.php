@@ -63,14 +63,15 @@ class PagamentoController extends Controller
         
     }
 
-    public function deletePag(Request $request)
-    {         
-        Pagamento:: where('id', $request['id'])->delete();
+    public function deletePag($id)
+    {        
+        Pagamento:: where('id', $id)->delete();
         return 'Apagado com sucesso!! ';
         
     }
-     public function updatePag(Request $request)
+     public function updatePag(Request $request,$id)
     {         
+        
          $obj;
        // arrumando a data padrão SQL
         $mes = substr($request['cartao']['data_expiracao'], 0, 2);
@@ -93,15 +94,14 @@ class PagamentoController extends Controller
             ]);
         }else{
             $obj = $request;
-        }
+        }        
         
         if(!$this->validarInfo($obj)){
             return 'Por favor preenchar os Campos corretamente';
         }
-        // retirando o cpf do objeto.
-        unset($obj['cpf']);
+        
 
-        Pagamento::where('cpf',$request['cpf'])->update($obj);
+        Pagamento::where('id',$id)->update($obj);
         return 'Alterado com sucesso!! ';
         
     }

@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt')
 exports.validateObject = (obj) =>{
     const { nome = '', dt_nascimento = '', email = '', cpf = '' } = obj
     let data = {}
@@ -20,4 +21,10 @@ exports.validateObject = (obj) =>{
         data = obj
     }
     return data;
+}
+
+// cryptografando a senha
+exports.hash = (senha) => {
+    return bcrypt.hash(senha, 10);
+
 }

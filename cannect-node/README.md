@@ -97,17 +97,3 @@ Desejável mas não obrigatório
 Caso tenha ficado alguma dúvida entre em contato com [ligiavalle@cannect.com.br](mailto:ligiavalle@cannect.com.br).
 
 print ("Boa sorte!");
-
-
-    const result = cliente.InsertUsuario({
-        nome: 'Jardel Araujo',
-        dt_nascimento: '1996-06-26',
-        email: 'jardel_96_2010@hotmail.com',
-        cpf: '123.456.789.10',
-        rua: 'afonso vidal',
-        numero: '361',
-        bairro: 'Jd Sta Antonio',
-        cidade: 'São Paulo',
-        estado: 'SP',
-        cep: '05723-330'
-    })
