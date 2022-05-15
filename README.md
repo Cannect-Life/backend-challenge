@@ -70,7 +70,7 @@ Criar uma API que vai realizar dados de transação de compras de um cliente, co
 
 * Node;
 * Rest (pré-requisito);
-* Express/Adonis/Nest (caso decida fazer em Node)
+* Express/Adonis/Nest/Sequelize
 * Mysql/PostgreSql/MariaDB
 
 ## O que será avaliado?
