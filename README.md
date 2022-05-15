@@ -68,8 +68,6 @@ Criar uma API que vai realizar dados de transação de compras de um cliente, co
 
 ## Quais tecnologias você pode utilizar?
 
-Você pode escolher uma ou mais tecnologias para a entrega. A utilização do Laravel com Lumen é um diferencial:
-
 * Node;
 * Rest (pré-requisito);
 * Express/Adonis/Nest (caso decida fazer em Node)
