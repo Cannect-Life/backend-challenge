@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  cannect-database:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: 'postgres'
+    container_name: database-cliente
+    ports:
+      - '5432:5432'
+    volumes:
+      - .:/usr/postgres/data
+
+
