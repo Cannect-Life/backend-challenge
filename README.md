@@ -22,7 +22,7 @@ A forma de entregar o projeto deve ser feita pelo GitHub, através do processo d
 * O banco de dados pode ser usado Mysql ou qualquer outro banco de dados relacional, basta enviar no projeto o .sql completo para criação do banco
 * Faça um commit da sua branch
 * Dê um pull request da sua branch
-* Avise-nos por e-mail que o pull request foi feito (ligiavalle@cannect.com.br)
+* Avise-nos por e-mail que o pull request foi feito (victorhenrique@cannect.com.br)
 * Entregar um arquivo md com um descritivo passo-a-passo (simples) de como executar a aplicação.
 
 ## APIs
@@ -72,28 +72,24 @@ Você pode escolher uma ou mais tecnologias para a entrega. A utilização do La
 
 * Node;
 * Rest (pré-requisito);
-* Express/Adonis/Nest (caso decida fazer em Node)
-* Mysql/PostgreSql/MariaDB
+* Express (caso decida fazer em Node)
+* Mysql
 
 ## O que será avaliado?
 
 * Clareza do código
 * Código comentado
-* Conhecimento de OO
 * Controle correto das rotas da aplicação
 * Uso correto do Git
-* Padrões de classe, atributos e métodos
-* Testes Unitários (pode usar qualquer tecnologia).
 
 ## Pontos extras (diferencial)
 
 Desejável mas não obrigatório
 
-* Configurar o Swagger para termos acesso a documentação da API;
 * Acesso aos endpoints das APIs através de Token;
 * Entrega do projeto em Docker;
 * Funcionalidades/tecnologias extras no geral serão sempre bem-vindas, desde que explicadas e bem codadas.
 
-Caso tenha ficado alguma dúvida entre em contato com [ligiavalle@cannect.com.br](mailto:ligiavalle@cannect.com.br).
+Caso tenha ficado alguma dúvida entre em contato com [victorhenrique@cannect.com.br](mailto:victorhenrique@cannect.com.br).
 
 print ("Boa sorte!");
